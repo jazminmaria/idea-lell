@@ -1,7 +1,6 @@
 /*imports*/
 @import url("https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Roboto:wght@100&display=swap");
 /*MISCELANEOUS*/
-/*por el momento las estoy aplicando solo en section home*/
 /*reset*/
 *,
 *::before,
@@ -12,7 +11,6 @@
 
 /*globals*/
 html {
-  font-family: "Arima Madurai", cursive;
   font-size: 62.5%; }
 
 a {
@@ -20,18 +18,21 @@ a {
   display: inline-block; }
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+  margin-bottom: 0px; }
 
 h1 {
   color: #FF9292;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 70px; }
 
 body {
   background-color: #FFF9B6;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 1fr; }
+  grid-template-columns: 1fr;
+  font-family: "Arima Madurai", cursive; }
 
 /*helpers*/
 /*.flex-row{
@@ -49,87 +50,54 @@ body {
     margin: 0 auto;
 }*/
 /* PARTIALS */
-/*header{
-    background-color: $ColorOne;
-    grid-row: 1 / 2;
-    .logo{
-        flex-basis: 30%;
-        padding: 0.2rem;
-    }
-    .navbar{        
-        @include flex-row (row, space-between, center);
-        @include container (1080px, 0 auto);
-        padding: 0.2rem;
+header {
+  background-color: #FF9292;
+  grid-row: 1 / 2; }
+  header .logo {
+    flex-basis: 30%;
+    padding: 0.2rem; }
+  header .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0.2rem; }
+  header .menu {
+    flex-basis: 50%;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  header .menu__item:hover .menu__link {
+    color: #FF9292;
+    background-color: #FFE699; }
+  header .menu__item .menu__link {
+    font-size: 2em;
+    color: #FFE699;
+    text-transform: uppercase;
+    padding: 1rem; }
+  header .menu__link {
+    transition: ease-in-out cubic-bezier(0.23, 1, 0.32, 1); }
+  header .menu__item {
+    border: 2px solid #FF9292; }
 
-    }
-    .menu{
-        flex-basis: 50%;
-        padding: 0.2rem;
-        @include flex-row (row, space-between, center);
-    }
-        .menu__item:hover .menu__link{
-            color: $ColorOne;
-            background-color: $ColorTwo;
-        }
-        .menu__item .menu__link{
-            font-size: 2em;
-            color: $ColorTwo;
-            text-transform: uppercase;
-            padding: 1rem;
-        }
-    .menu__link{
-        transition: ease-in-out cubic-bezier(0.23, 1, 0.320, 1);
-    }
-    .menu__item{
-        border: 2px solid $ColorOne;  
-    }  
-}
-*/
-nav.navbar.navbar-expand-lg.navbar-light.bg-light {
-  background-color: #FFF9B6; }
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0.2rem; }
+    header .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center; }
+    header .menu .menu__item .menu__link {
+      font-size: 10px; } }
 
-div.container-fluid {
-  background-color: #FF9292; }
-
-.navbar-light .navbar-toggler {
-  color: var(--ColorTwo);
-  border-color: var(--ColorTwo); }
-
-.navbar-toggler {
-  background-color: var(--ColorTwo); }
-
-.bg-light {
-  --bs-bg-opacity: 0; }
-
-.navbar-light .navbar-brand {
-  color: var(--ColorTwo);
-  text-transform: uppercase;
-  font-size: 2em; }
-
-.nav-item {
-  text-transform: uppercase;
-  font-size: 2rem; }
-
-.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show > .nav-link {
-  color: var(--ColorTwo); }
-
-/*@media screen and (max-width: 768px) {
-    
-    header{
-        padding: 0.2rem;
-    }
-    header .navbar{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: center;
-    }
-    .menu .menu__item .menu__link {
-        font-size: 0.8em;
-    }
-}
-*/
 footer {
   background-color: #FFE699;
   padding: 0.6rem;
@@ -162,24 +130,19 @@ footer {
 
 picture {
   flex-basis: 50%;
-  justify-content: center; }
+  justify-content: center;
+  margin-left: 20px; }
 
 /* VIEWS */
 .section__about {
+  font-family: "Arima Madurai", cursive;
   max-width: 1080px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem; }
-  .section__about__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-basis: 65%;
-    font-size: 2em; }
   .section__about__trabajos {
     display: flex;
     flex-direction: column;
@@ -206,15 +169,16 @@ picture {
     text-align: center;
     font-size: 70px; }
   .section__about article {
-    font-size: 2em;
+    font-size: 20px;
     text-align: center;
     color: #9F9191;
     padding: 2rem; }
-  .section__about h3 {
+  .section__about h2 {
     color: #FF9292;
-    font-size: 2em;
+    font-size: 40px;
     font-family: "Arima Madurai", cursive;
-    text-align: center; }
+    text-align: center;
+    text-transform: uppercase; }
 
 @media screen and (max-width: 768px) {
   .section__about {
@@ -223,9 +187,11 @@ picture {
     justify-content: space-between;
     align-items: center; }
     .section__about__title {
-      font-size: 3em; }
-    .section__about__description {
-      font-size: 1.3em; } }
+      font-size: 35px; }
+    .section__about h2 {
+      font-size: 25px; }
+    .section__about article {
+      font-size: 13px; } }
 
 .section__contacto {
   max-width: 1080;
@@ -237,7 +203,7 @@ picture {
 .contacto__formulario {
   padding-top: 20px;
   margin: 1.3rem;
-  font-size: 2rem;
+  font-size: 20px;
   text-transform: uppercase;
   color: #9F9191;
   background-color: #FFE699; }
@@ -269,29 +235,30 @@ picture {
   .contacto__formulario button {
     width: 100px;
     height: 50px;
-    font-size: 0.8em;
+    font-size: 13px;
     color: #9F9191;
     background-color: #FFF9B6;
     text-transform: uppercase;
-    padding: 1.3rem;
     border-width: 0px;
     align-self: center;
-    margin: 2rem; }
+    margin: 2rem;
+    text-align: center; }
 
 @media screen and (max-width: 768px) {
   .section__contacto__titulo {
-    font-size: 3.5em;
+    font-size: 35px;
     text-align: center; }
   .contacto__formulario {
-    font-size: 1em;
-    margin: 0.5rem; }
+    font-size: 10px;
+    margin: 5px; }
     .contacto__formulario textarea {
       max-width: 200px;
       max-height: 100px; }
     .contacto__formulario button {
       max-width: 50px;
       max-height: 25px;
-      text-align: center; } }
+      text-align: center;
+      font-size: 10px; } }
 
 .SectionHome {
   max-width: 1080px;
@@ -303,16 +270,16 @@ picture {
   align-items: center;
   text-align: center; }
   .SectionHome article {
-    font-size: 3em;
+    font-size: 30px;
     color: #9F9191; }
   .SectionHome h1 {
-    font-size: 15em;
+    font-size: 150px;
     flex-basis: 35%;
     justify-content: center;
     line-height: 15.5rem; }
   .SectionHome h2 {
     color: #FF9292;
-    font-size: 6em;
+    font-size: 60px;
     flex-basis: 45%;
     line-height: 6.4rem;
     text-align: center; }
@@ -328,15 +295,14 @@ picture {
     flex-direction: column;
     align-items: center;
     justify-content: center; }
-  .SectionHomeTitle {
-    font-size: 12em;
-    line-height: 12.5rem;
-    order: 0; }
-  .SectionHomeSubtitle {
-    font-size: 4em;
-    line-height: 4.5rem; }
-  .SectionHomeArticle {
-    font-size: 2em; } }
+    .SectionHome h1 {
+      font-size: 100px;
+      line-height: 115px; }
+    .SectionHome h2 {
+      font-size: 30px;
+      line-height: 35px; }
+    .SectionHome article {
+      font-size: 20px; } }
 
 .section__servicios {
   max-width: 1080px;
@@ -345,13 +311,13 @@ picture {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  justify-content: center; }
+  justify-content: flex-start; }
   .section__servicios__title {
     font-size: 70px;
     text-align: center; }
   .section__servicios__lista {
     flex-basis: 70%;
-    font-size: 2em;
+    font-size: 20px;
     color: #9F9191;
     text-align: center; }
   .section__servicios__herramientas {
@@ -366,9 +332,9 @@ picture {
 
 @media screen and (max-width: 768px) {
   .section__servicios__title {
-    font-size: 3.5em; }
+    font-size: 35px; }
   .section__servicios__lista {
-    font-size: 1.3em; }
+    font-size: 13px; }
   .section__servicios__contenido {
     display: flex;
     flex-direction: column;
@@ -377,7 +343,7 @@ picture {
     max-width: 75%; } }
 
 .planes__titulo {
-  font-size: 7em;
+  font-size: 70px;
   text-align: center; }
 
 .planes__imagenes {
@@ -397,7 +363,7 @@ picture {
 
 @media screen and (max-width: 768px) {
   .planes__titulo {
-    font-size: 70px; }
+    font-size: 35px; }
   .planes__imagenes {
     display: flex;
     flex-direction: column;
@@ -407,7 +373,7 @@ picture {
     align-items: center; }
     .planes__imagenes picture {
       margin-bottom: 1.3rem;
-      max-width: 50%;
-      max-height: 50%; }
+      max-width: 65%;
+      max-height: 65%; }
     .planes__imagenes img:hover {
       transform: scale(1.15); } }

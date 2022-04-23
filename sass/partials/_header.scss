@@ -33,19 +33,17 @@ header{
     }  
 }
 
-@media screen and (max-width: 768px) {
-    
+@media screen and (max-width: 768px) {    
     header{
         padding: 0.2rem;
-    }
-    header .navbar{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: center;
-    }
-    .menu .menu__item .menu__link {
-        font-size: 0.8em;
-    }
+        .navbar{
+            @include flex-row (row);
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        .menu .menu__item .menu__link {
+            font-size: 10px;
+        }
+    }    
 }

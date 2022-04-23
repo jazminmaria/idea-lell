@@ -1,14 +1,14 @@
 .section__servicios{
     @include container (1080px, 0 auto);
     @include flex-column (column);
-    justify-content: center;
+    justify-content: flex-start;
     &__title{
-        font-size: 70px;
+        font-size: map-get($font-size, title );
         text-align: center;
     }
     &__lista{
         flex-basis: 70%;
-        font-size: 2em;
+        font-size: map-get($font-size, content  );
         color: $ColorText;
         text-align: center;
     }
@@ -24,10 +24,10 @@
 @media screen and (max-width: 768px){
     .section__servicios{
         &__title{
-            font-size: 3.5em;
+            font-size: map-get($font-size, title-query );
         }
         &__lista{
-            font-size: 1.3em;
+            font-size: map-get($font-size, content-query);
         }
         &__contenido{
             display: flex;

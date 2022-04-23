@@ -4,10 +4,11 @@ $ColorOne: #FF9292;
 $ColorTwo: #FFE699;
 $ColorText: #9F9191;
 
-/*por el momento las estoy aplicando solo en section home*/
+
 $font-size: (
-    large: 15em,
-    medium: 6em,
-    small: 3em,
     title: 70px,
+    subtitle: 40px,
+    content: 20px,
+    title-query: 35px,
+    content-query: 13px,
 );

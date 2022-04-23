@@ -1,14 +1,14 @@
 .section__contacto{
     @include container (1080, 0 auto);
     &__titulo{
-        font-size: 70px;
+        font-size: map-get($font-size , title);
         text-align: center;
     }
 }
 .contacto__formulario{
     padding-top: 20px;
     margin: 1.3rem;
-    font-size: 2rem;
+    font-size: map-get($font-size, content );
     text-transform: uppercase;
     color: $ColorText;
     background-color: $ColorTwo;
@@ -46,26 +46,26 @@
     button{
         width: 100px;
         height: 50px;
-        font-size: 0.8em;
+        font-size: map-get($font-size, content-query );
         color: $ColorText;
         background-color: $ColorZero;
         text-transform: uppercase;
-        padding: 1.3rem;
         border-width: 0px;
         align-self: center;
         margin: 2rem;
+        text-align: center;
     }
 }
 @media screen and (max-width: 768px) {
     .section__contacto{
         &__titulo{
-            font-size: 3.5em;
+            font-size: map-get($font-size, title-query );
             text-align: center;
         }
     }
     .contacto__formulario{
-        font-size: 1em;
-        margin: 0.5rem;
+        font-size: 10px;
+        margin: 5px;
         textarea {
             max-width: 200px;
             max-height: 100px;
@@ -74,6 +74,7 @@
             max-width: 50px;
             max-height: 25px;
             text-align: center;
+            font-size: 10px;
         }
     }
 }

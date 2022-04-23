@@ -11,7 +11,6 @@
 /*globals*/
 
 html{
-    font-family: $Font;
     font-size: 62.5%;
 }
 
@@ -22,11 +21,13 @@ a{
 
 ul{
     list-style-type: none;
+    margin-bottom: 0px;
 }
 
 h1{
     color: $ColorOne;
     text-transform: uppercase;
+    font-size: map-get($font-size , title);
 }
 
 body{
@@ -34,5 +35,6 @@ body{
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;    
+    font-family: $Font;
 }

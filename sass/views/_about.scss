@@ -1,12 +1,8 @@
 .section__about{
+    font-family: $Font;
     @include container (1080px, 0 auto);
-    @include flex-row (row);
+    @include flex-column (column);
     padding: 1.5rem;
-    &__description{
-        @include flex-column (column);
-        flex-basis: 65%;
-        font-size: 2em;
-    }
     &__trabajos{
         @include flex-column (column);
         background-color: $ColorTwo;
@@ -33,29 +29,33 @@
     }
     &__title{
         text-align: center;
-        font-size: 70px;
+        font-size: map-get($font-size , title);
     }
     article{
-        font-size: 2em;
+        font-size: map-get($font-size , content); 
         text-align: center;
         color: $ColorText;
         padding: 2rem;
     }
-    h3{
+    h2{
         color: $ColorOne;
-        font-size: 2em;
+        font-size: map-get($font-size , subtitle);
         font-family: $Font;
         text-align: center;
+        text-transform: uppercase;
     }
 }
 @media screen and (max-width: 768px){
     .section__about{
         @include flex-column (column);
         &__title{
-            font-size: 3em;
+            font-size: map-get($font-size, title-query );
         }
-        &__description{
-            font-size: 1.3em;
+        h2{
+            font-size: 25px;
+        }
+        article{
+            font-size: map-get($font-size , content-query );
         }
     }
 }

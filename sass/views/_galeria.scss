@@ -1,6 +1,6 @@
 .planes{
     &__titulo{
-        font-size: 7em;
+        font-size: map-get($font-size, title );
         text-align: center;
     }
     &__imagenes{
@@ -24,7 +24,7 @@
 @media screen and (max-width: 768px){
     .planes{
         &__titulo{
-            font-size: 70px;
+            font-size: map-get($font-size, title-query );
         }
         &__imagenes{
             @include flex-column (column);
@@ -32,8 +32,8 @@
             align-items: center;
             picture{
                 margin-bottom: 1.3rem;
-                max-width: 50%;
-                max-height: 50%;
+                max-width: 65%;
+                max-height: 65%;
             }
             img:hover{
                 transform: scale(1.15);
